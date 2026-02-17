@@ -603,8 +603,8 @@ function Contact() {
                 {"Vamos construir seu próximo projeto!"}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Pronto para elevar o nível do seu negócio com um design exclusivo e automações que funcionam?
-               Entre em contato para transformarmos sua ideia em um sistema eficiente.
+                Pronto para elevar o nível do seu negócio com um design exclusivo e automações que funcionam?
+                Entre em contato para transformarmos sua ideia em um sistema eficiente.
               </p>
 
               <div className="mt-8 flex flex-col gap-4">
@@ -637,15 +637,18 @@ function Contact() {
             </div>
 
             <form
-              onSubmit={(e) => e.preventDefault()}
+              action="https://formspree.io/f/mreaknra"
+              method="POST"
               className="flex flex-col gap-4"
             >
               <label className="flex flex-col gap-1.5">
                 <span className="text-xs tracking-wider uppercase text-muted-foreground">
-                  Name
+                  Nome
                 </span>
                 <input
                   type="text"
+                  name="name"
+                  required
                   placeholder="Seu nome"
                   className="rounded-lg border border-border bg-secondary px-4 py-2.5 text-sm text-foreground placeholder-muted-foreground outline-none transition-colors focus:border-primary"
                 />
@@ -656,15 +659,19 @@ function Contact() {
                 </span>
                 <input
                   type="email"
-                  placeholder="Seuimail@exemplo.com"
+                  name="email"
+                  required
+                  placeholder="Seuemail@exemplo.com"
                   className="rounded-lg border border-border bg-secondary px-4 py-2.5 text-sm text-foreground placeholder-muted-foreground outline-none transition-colors focus:border-primary"
                 />
               </label>
               <label className="flex flex-col gap-1.5">
                 <span className="text-xs tracking-wider uppercase text-muted-foreground">
-                  Message
+                  Mensagem
                 </span>
                 <textarea
+                  name="message"
+                  required
                   rows={4}
                   placeholder="Fale-me sobre o seu projeto...."
                   className="resize-none rounded-lg border border-border bg-secondary px-4 py-2.5 text-sm text-foreground placeholder-muted-foreground outline-none transition-colors focus:border-primary"
@@ -684,6 +691,7 @@ function Contact() {
     </section>
   );
 }
+
 
 /* ------------------------------------------------------------------ */
 /*  FOOTER                                                             */
